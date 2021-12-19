@@ -32,7 +32,7 @@ const IntroText = () => {
         Have I mentioned that I love to develop web things?
       </Box>
       <Box className={styles.h3} fontWeight={"light"}>
-        Database, designing, developing, deploying. I got you covered.
+        Designing, database, developing, deploying. I got you covered.
       </Box>
       <Link as="/" href="/contacts" passHref>
         <Button
