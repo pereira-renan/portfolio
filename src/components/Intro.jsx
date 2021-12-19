@@ -3,6 +3,7 @@ import { GiTalk } from "react-icons/gi"
 import styles from "../styles/Home.module.scss"
 import React, { useState, setState } from "react"
 import Link from "next/link"
+import MediaQuery from "react-responsive"
 
 const IntroText = () => {
   return (
@@ -29,6 +30,9 @@ const IntroText = () => {
       </Box>
       <Box className={styles.h2}>
         Have I mentioned that I love to develop web things?
+      </Box>
+      <Box className={styles.h3} fontWeight={"light"}>
+        Database, designing, developing, deploying. I got you covered.
       </Box>
       <Link as="/" href="/contacts" passHref>
         <Button
@@ -57,13 +61,7 @@ const IntroImage = () => {
             objectFit="cover"
           />
         </Box>
-        <Box
-          className={styles.bgArrow}
-          position="absolute"
-          width="10vw"
-          top="30px"
-          right="30px"
-        >
+        <Box className={styles.bgArrow}>
           <Image
             src="monophy.gif"
             alt="a shaky pointing arrow"
@@ -120,16 +118,10 @@ function Intro() {
 function IntroNoAnimation() {
   return (
     <>
-      <Flex
-        width="100vw"
-        height={"90vh"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        overflow="hidden"
-      >
+      <Box className={styles.introPage}>
         <IntroText />
         <IntroImage />
-      </Flex>
+      </Box>
     </>
   )
 }

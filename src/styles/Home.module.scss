@@ -19,10 +19,10 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
 @media screen and (max-width: 480px) {
   .h1 {
-    font-size: 10vw;
+    font-size: 11vw;
   }
   .h2 {
-    padding-top: 10vh;
+    padding-top: 5vh;
     font-weight: bold;
     font-size: 6vw;
   }
@@ -31,11 +31,11 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 6vw;
   }
   .h3 {
-    font-size: 3vw;
+    font-size: 5vw;
   }
   .h3__accent {
     color: $main-accent;
-    font-size: 4vw;
+    font-size: 5vw;
   }
   .introPage {
     display: flex;
@@ -139,31 +139,47 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
   //IntroImage
   .introImage {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 100vw;
+    align-items: center;
+  }
+  .bgPhoto {
+    width: 60vw;
+    animation: 0.5s ease-in 0s 1 fade-in forwards;
+    opacity: 0;
+    max-height: 90vh;
+    animation-delay: 2s;
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    mask-image: linear-gradient(to top, transparent 1%, black 20%);
   }
 
   .bgArrowText {
     color: "white";
-    font-size: 1.8vw;
+    font-size: 6vw;
     position: absolute;
-    top: 0;
-    right: 30px;
-    width: 7vw;
+    top: -20px;
+    right: -40px;
     width: max-content;
     text-align: center;
     font-family: "Indie Flower", cursive;
     animation: 2s ease-in 0s 1 fade-in2 forwards;
-    transform: rotate(15deg);
+    transform: rotate(30deg);
     opacity: 0;
     animation-delay: 2s;
   }
 
   .bgArrow {
-    transform: rotate(-30deg);
-    width: 200px;
+    transform: rotate(-20deg);
+    width: 20px;
     animation: 2s ease-in 0s 1 fade-in2 forwards;
     opacity: 0;
     animation-delay: 2s;
+    position: absolute;
+    width: 25vw;
+    top: 20px;
+    right: -20px;
   }
 
   .introAnimation {
@@ -185,7 +201,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 10vw;
   }
   .h2 {
-    padding-top: 10vh;
+    padding-top: 5vh;
     font-weight: bold;
     font-size: 6vw;
   }
@@ -302,31 +318,46 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
   //IntroImage
   .introImage {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    max-height: 40vh;
+    width: 100vw;
+    align-items: center;
+  }
+  .bgPhoto {
+    max-width: 250px;
+    animation: 0.5s ease-in 0s 1 fade-in forwards;
+    opacity: 0;
+    max-height: 40vh;
+    animation-delay: 2s;
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    mask-image: linear-gradient(to top, transparent 1%, black 20%);
   }
 
   .bgArrowText {
     color: "white";
-    font-size: 1.8vw;
+    font-size: 4vw;
     position: absolute;
-    top: 0;
-    right: 30px;
-    width: 7vw;
+    top: -20px;
+    right: -100px;
     width: max-content;
     text-align: center;
     font-family: "Indie Flower", cursive;
     animation: 2s ease-in 0s 1 fade-in2 forwards;
-    transform: rotate(15deg);
+    transform: rotate(30deg);
     opacity: 0;
     animation-delay: 2s;
   }
 
   .bgArrow {
-    transform: rotate(-30deg);
-    width: 200px;
+    transform: rotate(-20deg);
     animation: 2s ease-in 0s 1 fade-in2 forwards;
     opacity: 0;
     animation-delay: 2s;
+    position: absolute;
+    width: 20vw;
+    top: 20px;
+    right: -80px;
   }
 
   .introAnimation {
@@ -348,7 +379,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 10vw;
   }
   .h2 {
-    padding-top: 10vh;
+    padding-top: 5vh;
     font-weight: bold;
     font-size: 4vw;
   }
@@ -357,20 +388,11 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 4vw;
   }
   .h3 {
-    font-size: 2vw;
+    font-size: 3vw;
   }
   .h3__accent {
     color: $main-accent;
-    font-size: 2vw;
-  }
-  .introPage {
-    display: flex;
-    width: 100vw;
-    height: 90vh;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    font-size: 3vw;
   }
   .introButton {
     font-size: 12vw;
@@ -465,31 +487,46 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
   //IntroImage
   .introImage {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    max-height: 40vh;
+    width: 100vw;
+    align-items: center;
+  }
+  .bgPhoto {
+    max-width: 250px;
+    animation: 0.5s ease-in 0s 1 fade-in forwards;
+    opacity: 0;
+    max-height: 40vh;
+    animation-delay: 2s;
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    mask-image: linear-gradient(to top, transparent 1%, black 20%);
   }
 
   .bgArrowText {
     color: "white";
-    font-size: 1.8vw;
+    font-size: 4vw;
     position: absolute;
-    top: 0;
-    right: 30px;
-    width: 7vw;
+    top: -20px;
+    right: -140px;
     width: max-content;
     text-align: center;
     font-family: "Indie Flower", cursive;
     animation: 2s ease-in 0s 1 fade-in2 forwards;
-    transform: rotate(15deg);
+    transform: rotate(30deg);
     opacity: 0;
     animation-delay: 2s;
   }
 
   .bgArrow {
-    transform: rotate(-30deg);
-    width: 200px;
+    transform: rotate(-20deg);
     animation: 2s ease-in 0s 1 fade-in2 forwards;
     opacity: 0;
     animation-delay: 2s;
+    position: absolute;
+    width: 15vw;
+    top: 30px;
+    right: -90px;
   }
 
   .introAnimation {
@@ -508,10 +545,10 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
 @media screen and (min-width: 1024px) {
   .h1 {
-    font-size: 5vw;
+    font-size: 6vw;
   }
   .h2 {
-    padding-top: 10vh;
+    padding-top: 5vh;
     font-weight: bold;
     font-size: 2.2vw;
   }
@@ -520,11 +557,11 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 2.5vw;
   }
   .h3 {
-    font-size: 1.5vw;
+    font-size: 1.8vw;
   }
   .h3__accent {
     color: $main-accent;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
   }
   .introPage {
     display: flex;
@@ -628,9 +665,11 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     display: flex;
     width: 40vw;
     align-items: center;
+    justify-content: center;
     padding-right: 5vh;
   }
   .bgPhoto {
+    max-width: 40vw;
     animation: 0.5s ease-in 0s 1 fade-in forwards;
     opacity: 0;
     max-height: 90vh;
@@ -657,10 +696,13 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
 
   .bgArrow {
     transform: rotate(-30deg);
-    width: 200px;
+    width: 10vw;
     animation: 2s ease-in 0s 1 fade-in2 forwards;
     opacity: 0;
     animation-delay: 2s;
+    position: absolute;
+    top: 30px;
+    right: 30px;
   }
 
   .introAnimation {
