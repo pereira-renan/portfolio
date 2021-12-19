@@ -6,8 +6,9 @@ $color-dark: #745185;
 $color-darker: #331b4d;
 
 $main-color: #ff532e;
-$main-accent: #c0fd5e;
+$main-accent: #bffb5e;
 $main-usual: #ffe4af;
+$main-background: #331b4d;
 
 $light: #ffe4af #f5b477 #45857d #f4ab9a;
 $normal: #f6be85 #f59e72 #167071 #ffb47b;
@@ -16,95 +17,657 @@ $strong: #fc620c #b1584c #fb9234;
 $dark: #ea8859 #a56979 #003d59 #745285;
 $darker: #c0572d #5f4356 #424951 #331b4d;
 
-//IntroText
-.introText {
-  color: $main-usual;
+@media screen and (max-width: 480px) {
+  .h1 {
+    font-size: 10vw;
+  }
+  .h2 {
+    font-size: 6vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 6vw;
+  }
+  .h3 {
+    font-size: 3vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 4vw;
+  }
+  .introPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .introButton {
+    font-size: 12vw;
+    margin-top: 40px;
+    -webkit-animation: 6s wobble-hor-bottom 1s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+    animation: wobble-hor-bottom 1s ease-in 4s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+  }
+
+  //IntroText
+  .introText {
+    display: flex;
+    color: $main-usual;
+    width: 80vw;
+    left: 0;
+    flex-direction: column;
+  }
+  .introText p {
+    color: $main-accent;
+    min-width: "60vw";
+  }
+
+  .accentText {
+    color: $main-accent;
+  }
+  .colorText {
+    color: $main-color;
+  }
+
+  //Navbar
+  .navlinks a {
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    border-bottom: solid 2px;
+    position: relative;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    cursor: pointer;
+  }
+  .navlinks {
+    color: white;
+  }
+  .navlinksLogo {
+    font-size: 30px;
+    color: $main-accent;
+    cursor: pointer;
+  }
+  .navbar {
+    color: $color-strong;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    height: 10vh;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+
+  .navlinks a::after {
+    content: "";
+    top: 2rem;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0%;
+    border-radius: 25px;
+    transition: all 250ms linear;
+  }
+
+  .navlinks a:hover {
+    animation: pulse-text 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    animation: pulse-border 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    top: 100%;
+    left: 0%;
+    width: 100%;
+  }
+
+  //IntroImage
+  .introImage {
+    display: none;
+  }
+
+  .bgArrowText {
+    color: "white";
+    font-size: 1.8vw;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 7vw;
+    width: max-content;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .bgArrow {
+    transform: rotate(-30deg);
+    width: 200px;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .introAnimation {
+    width: 100vw;
+    height: 100vh;
+    background: $main-background;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    position: fixed;
+    -webkit-animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
 }
 
-.accentText {
-  color: $main-accent;
+@media screen and (min-width: 481px) {
+  .h1 {
+    font-size: 10vw;
+  }
+  .h2 {
+    font-size: 6vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 6vw;
+  }
+  .h3 {
+    font-size: 3vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 4vw;
+  }
+  .introPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .introButton {
+    font-size: 12vw;
+    margin-top: 40px;
+    -webkit-animation: 6s wobble-hor-bottom 1s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+    animation: wobble-hor-bottom 1s ease-in 4s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+  }
+
+  //IntroText
+  .introText {
+    display: flex;
+    color: $main-usual;
+    width: 80vw;
+    left: 0;
+    flex-direction: column;
+  }
+  .introText p {
+    color: $main-accent;
+    min-width: "60vw";
+  }
+
+  .accentText {
+    color: $main-accent;
+  }
+  .colorText {
+    color: $main-color;
+  }
+
+  //Navbar
+  .navlinks a {
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    border-bottom: solid 2px;
+    position: relative;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    cursor: pointer;
+  }
+  .navlinks {
+    color: white;
+  }
+  .navlinksLogo {
+    font-size: 30px;
+    color: $main-accent;
+    cursor: pointer;
+  }
+  .navbar {
+    color: $color-strong;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    height: 10vh;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+
+  .navlinks a::after {
+    content: "";
+    top: 2rem;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0%;
+    border-radius: 25px;
+    transition: all 250ms linear;
+  }
+
+  .navlinks a:hover {
+    animation: pulse-text 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    animation: pulse-border 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    top: 100%;
+    left: 0%;
+    width: 100%;
+  }
+
+  //IntroImage
+  .introImage {
+    display: none;
+  }
+
+  .bgArrowText {
+    color: "white";
+    font-size: 1.8vw;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 7vw;
+    width: max-content;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .bgArrow {
+    transform: rotate(-30deg);
+    width: 200px;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .introAnimation {
+    width: 100vw;
+    height: 100vh;
+    background: $main-background;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    position: fixed;
+    -webkit-animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
 }
 
-//Navbar
-.navlinks a {
-  font-weight: bold;
-  border-bottom: solid 2px;
-  position: relative;
-  border-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 800px;
-}
-.navlinks {
-  color: white;
-}
-.navbar {
-  color: $color-strong;
-  padding-left: 100px;
-  padding-right: 100px;
-  text-align: center;
-  height: 10vh;
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-size: 10vw;
+  }
+  .h2 {
+    font-size: 4vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 4vw;
+  }
+  .h3 {
+    font-size: 2vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 2vw;
+  }
+  .introPage {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .introButton {
+    font-size: 12vw;
+    margin-top: 40px;
+    -webkit-animation: 6s wobble-hor-bottom 1s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+    animation: wobble-hor-bottom 1s ease-in 4s both,
+      2s fade-in-bottom 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+  }
+
+  //IntroText
+  .introText {
+    display: flex;
+    color: $main-usual;
+    width: 80vw;
+    left: 0;
+    flex-direction: column;
+  }
+  .introText p {
+    color: $main-accent;
+    min-width: "60vw";
+  }
+
+  .accentText {
+    color: $main-accent;
+  }
+  .colorText {
+    color: $main-color;
+  }
+
+  //Navbar
+  .navlinks a {
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    border-bottom: solid 2px;
+    position: relative;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+  }
+  .navlinks {
+    color: white;
+  }
+  .navlinksLogo {
+    font-size: 30px;
+    color: $main-accent;
+    cursor: pointer;
+  }
+  .navbar {
+    color: $color-strong;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    height: 10vh;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+
+  .navlinks a::after {
+    content: "";
+    top: 2rem;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0%;
+    border-radius: 25px;
+    transition: all 250ms linear;
+  }
+
+  .navlinks a:hover {
+    animation: pulse-text 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    animation: pulse-border 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    top: 100%;
+    left: 0%;
+    width: 100%;
+  }
+
+  //IntroImage
+  .introImage {
+    display: none;
+  }
+
+  .bgArrowText {
+    color: "white";
+    font-size: 1.8vw;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 7vw;
+    width: max-content;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .bgArrow {
+    transform: rotate(-30deg);
+    width: 200px;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .introAnimation {
+    width: 100vw;
+    height: 100vh;
+    background: $main-background;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    position: fixed;
+    -webkit-animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
 }
 
-.navlinks a::after {
-  content: "";
-  top: 2rem;
-  width: 5px;
-  height: 5px;
-  background: #ff7e5f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #c0fd5e,
-    #c0fd5e
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #c0fd5e,
-    #c0fd5e
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+@media screen and (min-width: 1024px) {
+  .h1 {
+    font-size: 5vw;
+  }
+  .h2 {
+    font-size: 2.5vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 2.5vw;
+  }
+  .h3 {
+    font-size: 1.5vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 1.5vw;
+  }
+  .introPage {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .introButton {
+    font-size: 12vw;
+    margin-top: 40px;
+    -webkit-animation: 2s fade-in-bottom 8s
+        cubic-bezier(0.95, 0.05, 0.795, 0.035) both,
+      2s wobble-hor-bottom 12s both;
+    animation: 2s fade-in-bottom 8s cubic-bezier(0.95, 0.05, 0.795, 0.035) both,
+      2s wobble-hor-bottom 12s both;
+  }
 
-  position: absolute;
-  top: 100%;
-  left: 0%;
-  border-radius: 25px;
-  transition: all 250ms linear;
-}
+  //IntroText
+  .introText {
+    display: flex;
+    color: $main-usual;
+    width: 60vw;
+    left: 0;
+    flex-direction: column;
+    padding-left: 5vw;
+  }
+  .accentText {
+    color: $main-accent;
+  }
+  .colorText {
+    color: $main-color;
+  }
 
-.navlinks a:hover::after {
-  top: 100%;
-  left: 0%;
-  width: 100%;
-}
+  //Navbar
+  .navlinks a {
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    border-bottom: solid 2px;
+    position: relative;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+  }
+  .navlinks {
+    color: white;
+  }
+  .navlinksLogo {
+    font-size: 30px;
+    color: $main-accent;
+    cursor: pointer;
+  }
+  .navbar {
+    color: $color-strong;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    height: 10vh;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
 
-//IntroImage
-.bgPhoto {
-  animation: 0.5s ease-in 0s 1 fade-in;
-  -webkit-mask-image: linear-gradient(to top, transparent 1%, black 40%);
-  mask-image: linear-gradient(to top, transparent 1%, black 40%);
-}
-.bgArrowText {
-  color: "white";
-  font-size: 1.8vw;
-  position: absolute;
-  top: 0;
-  right: 30px;
-  width: 7vw;
-  width: max-content;
-  text-align: center;
-  font-family: "Indie Flower", cursive;
-  animation: 2s ease-in 0s 1 fade-in2;
-  transform: rotate(15deg);
-}
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
 
-.bgArrow {
-  transform: rotate(-30deg);
-  width: 200px;
-  animation: 2s ease-in 0s 1 fade-in2;
-}
+  .navlinks a::after {
+    content: "";
+    top: 2rem;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0%;
+    border-radius: 25px;
+    transition: all 250ms linear;
+  }
 
+  .navlinks a:hover {
+    animation: pulse-text 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    animation: pulse-border 3s infinite;
+  }
+
+  .navlinks a:hover::after {
+    top: 100%;
+    left: 0%;
+    width: 100%;
+  }
+
+  //IntroImage
+  .introImage {
+    display: flex;
+    width: 40vw;
+    align-items: center;
+    padding-right: 5vh;
+  }
+  .bgPhoto {
+    animation: 0.5s ease-in 0s 1 fade-in forwards;
+    opacity: 0;
+    max-height: 90vh;
+    animation-delay: 2s;
+    -webkit-mask-image: linear-gradient(to top, transparent 1%, black 20%);
+    mask-image: linear-gradient(to top, transparent 1%, black 20%);
+  }
+
+  .bgArrowText {
+    color: "white";
+    font-size: 1.8vw;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 7vw;
+    width: max-content;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .bgArrow {
+    transform: rotate(-30deg);
+    width: 200px;
+    animation: 2s ease-in 0s 1 fade-in2 forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  .introAnimation {
+    width: 100vw;
+    height: 100vh;
+    background: $main-background;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    position: fixed;
+    -webkit-animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: fade-out-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}
 /* ----------------------------------------------
  * Generated by Animista on 2021-12-16 0:44:6
  * Licensed under FreeBSD License.
@@ -153,6 +716,239 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-17 3:43:54
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+    animation: none;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-17 3:47:33
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+@for $i from 1 through 10 {
+  .introText div:nth-child(#{$i}n) {
+    -webkit-animation: fade-in-bottom
+      1s
+      cubic-bezier(0.95, 0.05, 0.795, 0.035)
+      both;
+    animation: fade-in-bottom 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+    animation-delay: #{$i * 0.2}s;
+  }
+}
+
+@keyframes move-down {
+  0% {
+    top: 0%;
+  }
+  99% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+    display: none;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-18 20:10:1
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-out-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-out-bck {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-80px);
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+}
+@keyframes fade-out-bck {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-80px);
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    background: $main-accent;
+  }
+  50% {
+    background: $main-color;
+  }
+  100% {
+    background: $main-accent;
+  }
+}
+
+@keyframes pulse-text {
+  0% {
+    color: $main-accent;
+  }
+  50% {
+    color: $main-color;
+  }
+  100% {
+    color: $main-accent;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-12-19 2:28:21
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }

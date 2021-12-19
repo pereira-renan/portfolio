@@ -1,25 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import {
-  Flex,
-  Center,
-  Text,
-  Button,
-  Spacer,
-  Box,
-  Stack,
-  VStack,
-  Grid,
-} from "@chakra-ui/react"
+import { Intro } from "../components/Intro"
 
-import styles from "../styles/Home.module.scss"
-
-import bg from "../assets/images/me-bw-v2.png"
-
-import Intro from "../components/Intro"
-
-const Home = () => {
+const LandingPage = () => {
   return <Intro />
 }
 
-export default Home
+export default LandingPage

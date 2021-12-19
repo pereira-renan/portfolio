@@ -1,81 +1,56 @@
-//import Image from "next/image"
-import {
-  Box,
-  Text,
-  Spacer,
-  Flex,
-  useColorMode,
-  Button,
-  Image,
-  Container,
-  Heading,
-  Center,
-} from "@chakra-ui/react"
-import { GrUpdate } from "react-icons/gr"
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs"
+import { Box, Text, Flex, useColorMode, Button, Image } from "@chakra-ui/react"
 import { GiTalk } from "react-icons/gi"
 import styles from "../styles/Home.module.scss"
-
-import { MdBuild, MdCall } from "react-icons/md"
+import React, { useState, setState } from "react"
+import Link from "next/link"
 
 const IntroText = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   //        className={styles.intro}
   return (
-    <Flex
-      className={styles.introText}
-      display="block"
-      minWidth="60vw"
-      left="0"
-      whiteSpace={"nowrap"}
-    >
-      <Heading className={styles.accentText} fontWeight={"light"} fontSize="32">
+    <Box className={styles.introText}>
+      <Box className={styles.h2__accent} fontWeight={"light"}>
         Hi, my name is
-      </Heading>
-      <Heading fontWeight={"black"} fontSize="5vw" display={"inline-block"}>
-        Renan Pereira.aaaaaaaaaaaaaaaaaaaaaa
-      </Heading>
-      <Heading textAlign="right">
-        <Heading fontSize="28" fontWeight={"light"}>
-          But my friends call me{" "}
-          <Heading
-            className={styles.accentText}
-            fontWeight={"light"}
-            display="inline-flex"
-          >
-            Duke
-          </Heading>{" "}
-          for some reason
-        </Heading>
-        <Heading color="#e2d7d5" fontSize="24">
-          and this font matches my hair color
-        </Heading>
-      </Heading>
-      <Heading paddingTop={"24"} fontSize="36px">
-        Have I mentioned that I love to build web things?
-      </Heading>
-      <Button
-        variant="solid"
-        className={styles.letsTalk}
-        size="lg"
-        rightIcon={<GiTalk />}
-      >
-        Let's talk
-      </Button>
-    </Flex>
+      </Box>
+      <Box className={styles.h1} fontWeight={"black"}>
+        Renan Pereira
+      </Box>
+      <Box className={styles.h3} fontWeight={"light"}>
+        But my friends call me{" "}
+        <Box
+          className={styles.h3__accent}
+          fontWeight={"black"}
+          display="inline-flex"
+        >
+          Duke
+        </Box>{" "}
+        for some reason
+      </Box>
+      <Box className={styles.h3} fontWeight={"light"}>
+        and this font matches my hair color
+      </Box>
+      <Box className={styles.h2} fontWeight={"light"}>
+        Have I mentioned that I love to develop web things?
+      </Box>
+      <Link as="/" href="/contacts">
+        <Button
+          width={"12vw"}
+          minW={"120px"}
+          maxW={"150px"}
+          className={styles.introButton}
+          rightIcon={<GiTalk />}
+        >
+          <Text>Let's talk</Text>
+        </Button>
+      </Link>
+    </Box>
   )
 }
 
 const IntroImage = () => {
   return (
-    <Flex
-      bg="blackAlpha.200"
-      minWidth="40vw"
-      right="0"
-      bottom="0"
-      alignItems={"center"}
-    >
-      <Box position="relative">
+    <Box className={styles.introImage}>
+      <Box position="relative" flex="1">
         <Box>
           <Image
             className={styles.bgPhoto}
@@ -105,17 +80,53 @@ const IntroImage = () => {
           </Text>
         </Box>
       </Box>
-    </Flex>
+    </Box>
   )
 }
 
-const Intro = () => {
+const IntroAnimation = () => {
+  const [show, setShow] = React.useState(true)
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(false)
+    }, 5000)
+
+    return () => clearTimeout(timeout)
+  }, [show])
+
+  if (!show) return null
+
+  return <Box className={styles.introAnimation}></Box>
+}
+
+function Intro() {
+  React.useEffect(() => {
+    function handleResize() {
+      console.log("resized to: ", window.innerWidth, "x", window.innerHeight)
+    }
+
+    window.addEventListener("resize", handleResize)
+  })
+
+  return (
+    <>
+      <Box className={styles.introPage}>
+        <IntroText />
+        <IntroImage />
+      </Box>
+    </>
+  )
+}
+
+function IntroNoAnimation() {
   return (
     <>
       <Flex
-        width="calc(100vw-200px)"
+        width="100vw"
         height={"90vh"}
-        alignItems={"stretch"}
+        alignItems={"center"}
+        justifyContent={"center"}
         overflow="hidden"
       >
         <IntroText />
@@ -125,7 +136,7 @@ const Intro = () => {
   )
 }
 
-export default Intro
+export { IntroNoAnimation, Intro }
 
 /*
 
