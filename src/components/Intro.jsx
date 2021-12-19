@@ -5,8 +5,6 @@ import React, { useState, setState } from "react"
 import Link from "next/link"
 
 const IntroText = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  //        className={styles.intro}
   return (
     <Box className={styles.introText}>
       <Box className={styles.h2__accent} fontWeight={"light"}>
@@ -29,10 +27,10 @@ const IntroText = () => {
       <Box className={styles.h3} fontWeight={"light"}>
         and this font matches my hair color
       </Box>
-      <Box className={styles.h2} fontWeight={"light"}>
+      <Box className={styles.h2}>
         Have I mentioned that I love to develop web things?
       </Box>
-      <Link as="/" href="/contacts">
+      <Link as="/" href="/contacts" passHref>
         <Button
           width={"12vw"}
           minW={"120px"}
@@ -40,7 +38,7 @@ const IntroText = () => {
           className={styles.introButton}
           rightIcon={<GiTalk />}
         >
-          <Text>Let's talk</Text>
+          <Text>Let`s talk</Text>
         </Button>
       </Link>
     </Box>
@@ -76,7 +74,7 @@ const IntroImage = () => {
           <Text className={styles.bgArrowText}>
             hey look,
             <br />
-            that's me!
+            that`s me!
           </Text>
         </Box>
       </Box>
@@ -137,75 +135,3 @@ function IntroNoAnimation() {
 }
 
 export { IntroNoAnimation, Intro }
-
-/*
-
-const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  return (
-    <Box bg="red">
-      <Center>
-        <Box fontSize="3xl" color="gray.100" fontWeight="bold" opacity="87%">
-          <Link href="/">
-            <a>{process.env.title}</a>
-          </Link>
-        </Box>
-        <Button variant="outline">
-          <BsFillMoonFill />
-        </Button>
-        <Spacer />
-        <IconButton
-          icon={colorMode === "light" ? <BsFillSunFill /> : <BsFillMoonFill />}
-          aria-label="Color mode switcher"
-          onClick={toggleColorMode}
-        >
-          Switch Mode
-        </IconButton>
-      </Center>
-    </Box>
-  )
-}*/
-/*
-
-<Box>
-      <Box>
-        <Container
-          bg="red"
-          position="absolute"
-          bottom="100px"
-          right="100px"
-          overflow="hidden"
-        >
-          <Container minW="10vw">
-            <Image
-              className={styles.bgArrow}
-              src="monophy.gif"
-              alt="heyguys"
-              boxSize="30vh"
-              position="absolute"
-              top="10%"
-              left="70%"
-            />
-            <Container
-              className={styles.bgArrowText}
-              position="absolute"
-              top="10%"
-              left="80%"
-            >
-              <Container
-                minW="6vw"
-                className={styles.kekw}
-                fontSize="1.5vw"
-                position="absolute"
-                left="20%"
-              >
-                hey, look
-                <br />
-                thats me!
-              </Container>
-            </Container>
-          </Container>
-        </Container>
-      </Box>
-    </Box>
-    */

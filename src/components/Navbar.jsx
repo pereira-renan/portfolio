@@ -7,7 +7,7 @@ export default function Navbar() {
     <Box>
       <Center className={styles.navbar}>
         <Flex fontWeight={"black"}>
-          <Link as="/" href="/home">
+          <Link as="/" href="/home" passHref>
             <Text as="a" className={styles.navlinksLogo}>
               RP
             </Text>
@@ -16,13 +16,13 @@ export default function Navbar() {
         <Spacer />
         <Box>
           <HStack spacing={12} className={styles.navlinks}>
-            <Link as="/" href="/about">
+            <Link as="/" href="/about" passHref>
               <a>About</a>
             </Link>
-            <Link as="/" href="/projects">
+            <Link as="/" href="/projects" passHref>
               <a>Projects</a>
             </Link>
-            <Link as="/" href="/contacts">
+            <Link as="/" href="/contacts" passHref>
               <a>Contact</a>
             </Link>
           </HStack>
