@@ -1,0 +1,230 @@
+$color-light: #f4ab9a;
+$color-normal: #ffb47b;
+$color-accent: #ff7c5e;
+$color-strong: #b1584c;
+$color-dark: #745185;
+$color-darker: #331b4d;
+
+//$main-color: #ff532e;
+$main-color: #ff532e;
+$main-accent: #bffb5e;
+$main-usual: #ffe4af;
+$main-background: #331b4d;
+
+$light: #ffe4af #f5b477 #45857d #f4ab9a;
+$normal: #f6be85 #f59e72 #167071 #ffb47b;
+$accent: #fe8f24 #e37352 #fe6625 #ff7c5e;
+$strong: #fc620c #b1584c #fb9234;
+$dark: #ea8859 #a56979 #003d59 #745285;
+$darker: #c0572d #5f4356 #424951 #331b4d;
+
+.contactPage {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 90vh;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
+}
+.contactIntro {
+  text-align: center;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.contactGrid {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  -webkit-animation: 1s fade-in-bottom 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    both;
+  animation: 1s fade-in-bottom 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) both;
+}
+
+.contactLink {
+  min-height: 60px;
+  min-width: fit-content;
+  height: 5vh;
+  width: 250px;
+  color: $main-accent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+}
+.contactIcon {
+  background: black;
+  font-size: 40px;
+  height: 60px;
+  width: 80px;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+.contactButton {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  left: -20px;
+  background: black; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    black,
+    black,
+    rgb(0, 0, 0, 0)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, black, black, rgb(0, 0, 0, 0));
+}
+
+.contactText {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.contactButton:ho {
+  -webkit-animation: shadow-pop-tr 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: shadow-pop-tr 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+.h1 {
+  font-size: 11vw;
+}
+.h2 {
+  padding-top: 5vh;
+  font-weight: bold;
+  font-size: 6vw;
+}
+.h2__accent {
+  color: $main-accent;
+  font-size: 6vw;
+}
+.h3 {
+  font-size: 5vw;
+}
+.h3__accent {
+  color: $main-accent;
+  font-size: 5vw;
+}
+
+@media screen and (min-width: 481px) {
+  .h1 {
+    font-size: 10vw;
+  }
+  .h2 {
+    padding-top: 5vh;
+    font-weight: bold;
+    font-size: 6vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 6vw;
+  }
+  .h3 {
+    font-size: 3vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-size: 10vw;
+  }
+  .h2 {
+    padding-top: 5vh;
+    font-weight: bold;
+    font-size: 4vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 4vw;
+  }
+  .h3 {
+    font-size: 3vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .h1 {
+    font-size: 6vw;
+  }
+  .h2 {
+    padding-top: 5vh;
+    font-weight: bold;
+    font-size: 2.2vw;
+  }
+  .h2__accent {
+    color: $main-accent;
+    font-size: 2.5vw;
+  }
+  .h3 {
+    font-size: 1.8vw;
+  }
+  .h3__accent {
+    color: $main-accent;
+    font-size: 1.8vw;
+  }
+}
+
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+    animation: none;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+    animation: none;
+  }
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}

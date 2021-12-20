@@ -41,10 +41,10 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     display: flex;
     flex-direction: column;
     width: 100vw;
-    max-height: 90vh;
+    height: 90vh;
     align-items: center;
     justify-content: flex-start;
-    overflow: scroll;
+    overflow: auto;
   }
   .introButton {
     font-size: 12vw;
@@ -224,7 +224,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     height: 90vh;
     align-items: center;
     justify-content: flex-start;
-    overflow: scroll;
+    overflow: auto;
   }
   .introButton {
     font-size: 12vw;
@@ -396,6 +396,15 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     color: $main-accent;
     font-size: 3vw;
   }
+  .introPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+  }
   .introButton {
     font-size: 12vw;
     margin-top: 40px;
@@ -566,14 +575,14 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     font-size: 1.8vw;
   }
   .introPage {
+    padding-top: 5vh;
     display: flex;
     width: 100vw;
     height: 90vh;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    overflow: scroll;
-    flex-wrap: wrap;
+    overflow: auto;
   }
   .introButton {
     font-size: 12vw;
@@ -668,7 +677,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
     display: flex;
     width: 40vw;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding-right: 5vh;
   }
   .bgPhoto {
