@@ -28,6 +28,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
   overflow: auto;
 }
 .contactIntro {
+  color: $main-usual;
   text-align: center;
   -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -49,7 +50,7 @@ $darker: #c0572d #5f4356 #424951 #331b4d;
   min-width: fit-content;
   height: 5vh;
   width: 250px;
-  color: $main-accent;
+  color: $main-usual;
   display: inline-flex;
   align-items: center;
   justify-content: left;
