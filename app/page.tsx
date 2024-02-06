@@ -17,7 +17,16 @@ const Home = () => {
             "lg:text-6xl sm:text-4xl text-3xl pb-4 fade-in-left",
           ])}
         >
-          Hey there, I'm Renan Pereira.
+          Hey there, I'm{" "}
+          <Link
+            className={cn([
+              "font-bold hover:text-[orange] hover:underline transition-all",
+            ])}
+            href="/about"
+          >
+            Renan Pereira
+          </Link>
+          .
         </h1>
         <h2
           className={cn([
@@ -33,22 +42,17 @@ const Home = () => {
         <div className="flex flex-col lg:flex-row text-lg">
           <div>
             <p className={cn([kanit.className, "w-8/12 pb-4 lg:p-0"])}>
-              I'm currently working as a fullstack developer at{" "}
-              <a
-                href="https://www.linkedin.com/company/jalasoft/"
-                target="_blank"
-                className="underline"
-              >
-                JalaSoft,
-              </a>{" "}
-              mainly using React and Java Spring Boot as tech stacks.
+              I'm currently working as a fullstack software developer, mainly
+              focused on using React and Java Spring Boot.
             </p>
           </div>
-          <Link className={cn(["font-bold"])} href="/contacts">
-            <Button variant="default" className="bounce-in-top">
-              Let's chat
-            </Button>
-          </Link>
+          <div>
+            <Link className={cn(["font-bold"])} href="/contacts">
+              <Button variant="default" className="bounce-in-top">
+                Let's chat
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

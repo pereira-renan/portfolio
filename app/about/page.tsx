@@ -19,15 +19,14 @@ const About = () => {
         <div
           className={cn([
             kanit.className,
-            "lg:text-2xl text-lg justify-center h-full flex flex-col fade-in-left",
+            "lg:text-2xl text-lg justify-center flex flex-col fade-in-left lg:h-full md:h-full h-auto",
           ])}
         >
           <p>
-            My name is Renan Pereira, I'm from Brazil. I'm a college graduate in
-            both Mechanical Engineering and Software Development, it was on my
-            first graduation where I discovered my true passion for programming
-            and I've been working with it both professionally and as a hobby
-            ever since.
+            My name is Renan Pereira. I'm a college graduate in both Mechanical
+            Engineering and Software Development, it was on my first graduation
+            where I discovered my true passion for programming and I've been
+            working with it both professionally and as a hobby ever since.
           </p>
           <br />
           <p>
