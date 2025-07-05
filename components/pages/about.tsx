@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SpotlightCard from "../ui/card/spotlight-card";
-import { ArrowRightIcon, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 
 export const About = () => {
@@ -25,12 +25,12 @@ export const About = () => {
             So I went for a Systems Analysis and Development degree.
           </p>
           <p>
-            I'm a{" "}
+            I&apos;m a{" "}
             <span className="font-bold text-red-300">
               Full Stack Engineer with over 3 years
             </span>{" "}
             of experience working on web applications across multiple
-            industries, I've worked with a variety of technologies and
+            industries, I&apos;ve worked with a variety of technologies and
             frameworks, from small-scale applications to large-scale enterprise
             systems. Here is a breakdown of my experiences: <br />
           </p>
@@ -139,7 +139,7 @@ export const About = () => {
             >
               <Link href="/links" className="inline-block">
                 <div className="flex w-full items-center gap-2">
-                  let's talk
+                  let&apos;s talk
                   <ExternalLink className="size-4" />
                 </div>
               </Link>

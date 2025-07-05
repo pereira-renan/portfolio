@@ -13,29 +13,7 @@ import { mergeClassNames } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import Icon from "../icons/icon";
 import Link from "next/link";
-
-export const NAV_LINKS = [
-  {
-    label: "Home",
-    href: "/",
-    showLink: true,
-  },
-  {
-    label: "About",
-    href: "/about",
-    showLink: true,
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    showLink: false,
-  },
-  {
-    label: "Links",
-    href: "/links",
-    showLink: true,
-  },
-];
+import { NAV_LINKS } from "@/app/sitemap";
 
 export const Header = ({ className }: { className?: string }) => {
   const pathname = usePathname();

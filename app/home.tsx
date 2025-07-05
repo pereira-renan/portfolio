@@ -10,7 +10,7 @@ const Home = () => {
     <div className="flex h-full flex-col justify-center gap-12">
       <div className="flex flex-col gap-6">
         <h1 className="text-4xl font-bold lg:text-6xl">
-          Hey there, I'm Renan Pereira.
+          Hey there, I&apos;m Renan Pereira.
         </h1>
 
         <span className="text-xl lg:text-2xl">
@@ -44,7 +44,7 @@ const Home = () => {
 
       <div>
         <p>
-          I'm currently working as a{" "}
+          I&apos;m currently working as a{" "}
           <span className="font-bold text-red-300">
             fullstack software engineer
           </span>
@@ -55,7 +55,7 @@ const Home = () => {
 
       <div>
         <Link href="/links" className={buttonVariants({ variant: "default" })}>
-          Let's talk
+          Let&apos;s talk
           <Handshake className="size-4" />
         </Link>
       </div>

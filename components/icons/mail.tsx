@@ -1,7 +1,6 @@
 import { mergeClassNames } from "@/lib/utils";
-import BaseIcon from "./base-icon";
-import { IconProps } from "./icon";
 import { Mail } from "lucide-react";
+import { IconProps } from "./icon";
 
 export const MailIcon = (props: IconProps) => {
   return (

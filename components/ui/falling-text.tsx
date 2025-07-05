@@ -29,7 +29,6 @@ const FallingText: React.FC<FallingTextProps> = ({
   const canvasContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [effectStarted, setEffectStarted] = useState(false);
-  const [effectEnded, setEffectEnded] = useState(false);
 
   useEffect(() => {
     if (!textRef.current) return;
@@ -79,7 +78,11 @@ const FallingText: React.FC<FallingTextProps> = ({
 
     if (!containerRef.current || !canvasContainerRef.current) return;
 
-    const containerRect = containerRef.current.getBoundingClientRect();
+    // Capture current DOM nodes to avoid stale ref issues in cleanup
+    const containerEl = containerRef.current;
+    const canvasContainerEl = canvasContainerRef.current;
+
+    const containerRect = containerEl.getBoundingClientRect();
     const width = containerRect.width;
     const height = containerRect.height;
 
@@ -89,7 +92,7 @@ const FallingText: React.FC<FallingTextProps> = ({
     engine.world.gravity.y = gravity;
 
     const render = Render.create({
-      element: canvasContainerRef.current,
+      element: canvasContainerEl,
       engine,
       options: {
         width,
@@ -166,7 +169,7 @@ const FallingText: React.FC<FallingTextProps> = ({
       elem.style.transform = "none";
     });
 
-    const mouse = Mouse.create(containerRef.current);
+    const mouse = Mouse.create(containerEl);
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse,
       constraint: {
@@ -201,13 +204,11 @@ const FallingText: React.FC<FallingTextProps> = ({
     };
     updateLoop();
 
-    setEffectEnded(true);
-
     return () => {
       Render.stop(render);
       Runner.stop(runner);
-      if (render.canvas && canvasContainerRef.current) {
-        canvasContainerRef.current.removeChild(render.canvas);
+      if (render.canvas && canvasContainerEl) {
+        canvasContainerEl.removeChild(render.canvas);
       }
       World.clear(engine.world, false);
       Engine.clear(engine);

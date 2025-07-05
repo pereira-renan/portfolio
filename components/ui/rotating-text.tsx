@@ -11,7 +11,6 @@ import {
   AnimatePresence,
   Transition,
   type VariantLabels,
-  type Target,
   type LegacyAnimationControls,
   type TargetAndTransition,
 } from "framer-motion";
